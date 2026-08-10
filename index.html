@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="BeatHouse - A modern personal music player"
+    >
+
+    <title>BeatHouse | Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <div class="app">
+
+        <header class="topbar">
+
+            <div class="logo">
+                <span class="logo-note">♪</span>
+
+                <div>
+                    <strong>BeatHouse</strong>
+                    <small>Music Player</small>
+                </div>
+            </div>
+
+            <div class="tagline">
+                <span class="status-dot"></span>
+                Your personal music space
+            </div>
+
+        </header>
+
+        <main class="player-layout">
+
+            <section class="now-playing">
+
+                <div class="album-art">
+                    <div class="album-glow"></div>
+                    <div class="album-ring"></div>
+
+                    <div class="visualizer">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="music-note">
+                        ♪
+                    </div>
+                </div>
+
+                <div class="song-info">
+
+                    <p class="label">
+                        <span class="live-dot"></span>
+                        NOW PLAYING
+                    </p>
+
+                    <h1 id="song-title">
+                        Tu
+                    </h1>
+
+                    <p id="song-artist">
+                        Talwinder
+                    </p>
+
+                </div>
+
+                <div class="progress-area">
+
+                    <div class="progress-bar">
+                        <div id="progress">
+                            <span class="progress-thumb"></span>
+                        </div>
+                    </div>
+
+                    <div class="time">
+                        <span id="current-time">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+
+                </div>
+
+                <div class="controls">
+
+                    <button
+                        id="shuffle"
+                        class="control-button"
+                        title="Shuffle"
+                        aria-label="Shuffle"
+                    >
+                        ↝
+                    </button>
+
+                    <button
+                        id="previous"
+                        class="control-button skip-button"
+                        title="Previous"
+                        aria-label="Previous song"
+                    >
+                        ◀◀
+                    </button>
+
+                    <button
+                        id="play"
+                        class="play-button"
+                        title="Play"
+                        aria-label="Play"
+                    >
+                        ▶
+                    </button>
+
+                    <button
+                        id="next"
+                        class="control-button skip-button"
+                        title="Next"
+                        aria-label="Next song"
+                    >
+                        ▶▶
+                    </button>
+
+                    <button
+                        id="repeat"
+                        class="control-button"
+                        title="Repeat"
+                        aria-label="Repeat"
+                    >
+                        ↻
+                    </button>
+
+                </div>
+
+                <div class="volume-area">
+
+                    <span class="volume-icon">🔊</span>
+
+                    <input
+                        type="range"
+                        id="volume"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="0.8"
+                        aria-label="Volume"
+                    >
+
+                    <span class="volume-value">80%</span>
+
+                </div>
+
+            </section>
+
+            <section class="playlist">
+
+                <div class="playlist-header">
+
+                    <div>
+                        <p class="label">YOUR LIBRARY</p>
+
+                        <h2>
+                            Playlist
+                        </h2>
+                    </div>
+
+                    <div class="song-count-box">
+                        <span id="song-count">
+                            10 songs
+                        </span>
+                    </div>
+
+                    </div>
+                    <div class="search-box">
+                        <span>⌕</span>
+                        <input type="text" id="search" placeholder="Search songs...">
+                     </div>
+                     <div id="song-list">
+
+                    <div class="song active" data-index="0">
+                        <span class="number">01</span>
+
+                        <div class="song-details">
+                            <h3>Tu</h3>
+                            <p>Talwinder</p>
+                        </div>
+
+                        <div class="playing-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="song" data-index="1">
+                        <span class="number">02</span>
+
+                        <div class="song-details">
+                            <h3>High On You</h3>
+                            <p>Jind Universe</p>
+                        </div>
+
+                        <div class="playing-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="song" data-index="2">
+                        <span class="number">03</span>
+
+                        <div class="song-details">
+                            <h3>Haseen</h3>
+                            <p>Talwinder</p>
+                        </div>
+
+                        <div class="playing-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="song" data-index="3">
+                        <span class="number">04</span>
+
+                        <div class="song-details">
+                            <h3>Pal Pal</h3>
+                            <p>Talwinder</p>
+                        </div>
+
+                        <div class="playing-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="song" data-index="4">
+                        <span class="number">05</span>
+
+                        <div class="song-details">
+                            <h3>Her</h3>
+                            <p>Shubh</p>
+                        </div>
+
+                        <div class="playing-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="song" data-index="5">
+                        <span class="number">06</span>
+
+                        <div class="song-details">
+                            <h3>G.O.A.T</h3>
+                            <p>Diljit Dosanjh</p>
+                        </div>
+
+                        <div class="playing-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="song" data-index="6">
+                        <span class="number">07</span>
+
+                        <div class="song-details">
+                            <h3>Boyfriend</h3>
+                            <p>Karan Aujla</p>
+                        </div>
+
+                        <div class="playing-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="song" data-index="7">
+                        <span class="number">08</span>
+
+                        <div class="song-details">
+                            <h3>Khayaal</h3>
+                            <p>Talwinder</p>
+                        </div>
+
+                        <div class="playing-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="song" data-index="8">
+                        <span class="number">09</span>
+
+                        <div class="song-details">
+                            <h3>Cheques</h3>
+                            <p>Shubh</p>
+                        </div>
+
+                        <div class="playing-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="song" data-index="9">
+                        <span class="number">10</span>
+
+                        <div class="song-details">
+                            <h3>King Shit</h3>
+                            <p>Shubh</p>
+                        </div>
+
+                        <div class="playing-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+    <span>♪</span>
+    BeatHouse
+    <b>•</b>
+    Music Player
+    <b>•</b>
+    <span>Designed & Developed by Muhammad Aazib Shahbaz</span>
+</footer>
+
+    </div>
+
+    <audio id="audio"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
